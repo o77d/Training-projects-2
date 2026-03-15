@@ -16,7 +16,7 @@ class _SplashState extends State<Splash> {
     Future.delayed(Duration(seconds: 1), () {
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (c) => (Home())));
     });
-    super.initState();
+    super.initState(); 
   }
 
   @override
@@ -24,7 +24,7 @@ class _SplashState extends State<Splash> {
     return Scaffold(
       body: Column( 
         mainAxisAlignment: MainAxisAlignment.center,
-        children:[SvgPicture.asset('assets/logo/Runway.svg')]),
+        children:[SvgPicture.asset('assets/logo/Runway.svg')]), 
     );
   }
 }
