@@ -17,6 +17,8 @@ dependencies:
  
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.2.3
+  gap: ^3.0.1
+  video_player: ^2.11.1
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +41,7 @@ flutter:
    - assets/images/category/
    - assets/images/models/
    - assets/svgs/
+   - assets/video/
 
  
   # fonts:
