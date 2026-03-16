@@ -13,14 +13,16 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String suffixIcon;
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => Size.fromHeight(80);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.white,
       toolbarHeight: preferredSize.height,
       leading: SizedBox.shrink(),
       leadingWidth: 0.0,
+      scrolledUnderElevation: 0.0,
 
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
