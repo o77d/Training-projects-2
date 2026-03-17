@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/pages/categories.dart';
+import 'package:flutter_application_2/pages/product_details.dart';
 import 'package:flutter_application_2/pages/splash.dart';
 
 
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      home: Splash(),
+      home: CategoriesScreen(),
     );
   }
 }

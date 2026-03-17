@@ -43,6 +43,8 @@ class _HomeState extends State<Home> {
         title: 'Runway',
         prefixIcon: 'assets/svgs/bar-chart-2.svg',
         suffixIcon: 'assets/svgs/notification.svg',
+                prefixIconOnTap: () => Navigator.pop(context),
+
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,

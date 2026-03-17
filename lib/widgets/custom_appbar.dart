@@ -7,10 +7,12 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
     required this.title,
     required this.prefixIcon,
     required this.suffixIcon,
+    this.prefixIconOnTap,
   });
   final String title;
   final String prefixIcon;
   final String suffixIcon;
+  final Function()? prefixIconOnTap;
 
   @override
   Size get preferredSize => Size.fromHeight(80);
@@ -27,7 +29,9 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SvgPicture.asset(prefixIcon, width: 24),
+          GestureDetector(
+            onTap: prefixIconOnTap,
+            child: SvgPicture.asset(prefixIcon, width: 24)),
           Text(
             title,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),

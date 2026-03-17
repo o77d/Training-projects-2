@@ -3,7 +3,7 @@ import 'package:flutter_application_2/models/product_model.dart';
 import 'package:flutter_application_2/pages/product_details.dart';
 import 'package:flutter_application_2/widgets/category_fliter.dart';
 import 'package:flutter_application_2/widgets/custom_appbar.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_application_2/widgets/product_item.dart';
 import 'package:gap/gap.dart';
 
 class CategoriesScreen extends StatelessWidget {
@@ -19,7 +19,7 @@ class CategoriesScreen extends StatelessWidget {
             'assets/images/models/469a39f070681c66ef7b0b841fe69af84f0424ba.png',
       ),
       ProductModel(
-        name: 'Gray coat and white T-sh..',
+        name: "Lightweight Men's Puffer Jacket",
         price: '180',
         image: 'assets/images/models/image 4.png',
       ),
@@ -29,17 +29,17 @@ class CategoriesScreen extends StatelessWidget {
         image: 'assets/images/models/image44.png',
       ),
       ProductModel(
-        name: 'Reebok Zig Kinetica II',
+        name: "Classic Tailored Fit Men's Dress Shirt",
         price: '130',
         image: 'assets/images/models/image 1.png',
       ),
       ProductModel(
-        name: 'Reebok Zig Kinetica II',
+        name: 'Deep gray essential regul..',
         price: '130',
         image: 'assets/images/models/image 2.png',
       ),
       ProductModel(
-        name: 'Reebok Zig Kinetica II',
+        name: 'Top man black with Trous..',
         price: '130',
         image: 'assets/images/models/image 3.png',
       ),
@@ -71,44 +71,18 @@ class CategoriesScreen extends StatelessWidget {
 
                 itemBuilder: (context, index) {
                   final item = products[index];
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 200,
-                        height: 255,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
-                          color: Color(0xFFECECEC),
-                        ),
-                        child: Image.asset(item.image),
-                      ),
-                      Gap(13),
-
-                      Text(
-                        item.name,
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      Gap(6),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            '\$${item.price}',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          Icon(Icons.favorite_border, size: 18),
-                        ],
-                      ),
-                    ],
+                  return ProductItem(
+                    name: item.name,
+                    price: item.price,
+                    image: item.image,
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (c) => ProductDetails(
+                            name: item.name,
+                            price: item.price,
+                            image: item.image,
+                      )),
+                    ),
                   );
                 },
               ),
