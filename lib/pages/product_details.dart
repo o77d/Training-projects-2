@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/models/product_model.dart';
 import 'package:flutter_application_2/widgets/category_fliter.dart';
 import 'package:flutter_application_2/widgets/custom_appbar.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 
 class ProductDetails extends StatefulWidget {
@@ -138,13 +139,58 @@ Widget bottomWidget(scroll, name, price) {
         ),
         Gap(20),
         Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(7),
+            border: Border.all(width: 0.7, color: Colors.black12),
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 children: [
-
-],)],
+                  Text(
+                    'Select color',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+                  Gap(10),
+                  SvgPicture.asset('assets/svgs/Frame 39639.svg'),
+                ],
+              ),
+              SizedBox(
+                height: 40,
+                child: VerticalDivider(
+                  width: 2,
+                  indent: 2,
+                  endIndent: 2,
+                  thickness: 1,
+                  color: Colors.black12,
+                ),
+              ),
+              Row(
+                children: [
+                  Text(
+                    'Select size',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+                  Gap(10),
+                  SvgPicture.asset('assets/svgs/Frame 39639.svg'),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Gap(25),
+        Container(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(7),
+            color: Colors.black,),
+          child: Center(
+            child: Text(
+              'Add To Bag',
+              style: TextStyle(color: Colors.white ,fontSize: 16, fontWeight: FontWeight.bold),
+            ),
           ),
         ),
       ],
